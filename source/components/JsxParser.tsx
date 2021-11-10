@@ -314,7 +314,7 @@ export default class JsxParser extends React.Component<TProps> {
 	}
 
 	render = (): JSX.Element => {
-		const jsx = (this.props.jsx || '').trim().replace(/<!DOCTYPE([^>]*)>/g, '')
+		const jsx = (this.props.jsx || '').replace(/<!DOCTYPE([^>]*)>/g, '')
 		this.ParsedChildren = this.#parseJSX(jsx)
 		const className = [...new Set(['jsx-parser', ...String(this.props.className).split(' ')])]
 			.filter(Boolean)
